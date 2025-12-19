@@ -1,0 +1,28 @@
+**mem_test_large**
+addi $t0, $zero, 0x1000
+addi $t1, $zero, 0x1234
+sll $t1, $t1, 0x10
+ori $t2, $t1, 0x5678
+
+sw $t2, 0x1000($zero)
+sh $t2, 0x1004($zero)
+sb $t2, 0x1008($zero)
+
+lw $t3, 0x1000($zero)
+lhu $t4, 0x1004($zero)
+lbu $t5, 0x1008($zero)
+
+lui $t6, 0xFFFF
+
+**arith_test**
+addi $t0, $zero, 15
+addi $t1, $zero, 14
+add $t2, $t1, $t0
+sub $t3, $t2, $t1
+andi $t4, $t0, 5
+ori $t5, $zero, 5
+sll $t6, $t0, 4
+
+**nonseq_pc**
+addi $t0, $zero, 0x1
+addi $t1, $zero, 0x1
